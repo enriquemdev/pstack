@@ -245,6 +245,8 @@ def rollback(backup, apply=False):
         raise ValueError("Invalid rollback ownership")
     marker = destination / ".pstack-install.json"
     current = read_json(marker) if marker.exists() else {}
+    if not current and any((destination / n).exists() for n in names):
+        raise ValueError("Missing ownership marker; preserve existing files before rollback")
     if current and current.get("backup") != str(backup):
         raise ValueError("Not the current installation backup")
     for name in names:

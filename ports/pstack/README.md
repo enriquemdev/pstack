@@ -53,7 +53,8 @@ python3 ports/pstack/pstack.py rollback /ruta/devuelta/en/backup
 python3 ports/pstack/pstack.py rollback /ruta/devuelta/en/backup --apply
 ```
 
-La restauración rechaza cambios locales posteriores para no destruirlos. Conserva backups.
+La restauración rechaza cambios locales posteriores para no destruirlos. Conserva backups
+fuera de las carpetas de descubrimiento para que versiones anteriores no aparezcan duplicadas.
 
 ## Actualizaciones
 
@@ -65,6 +66,9 @@ y un PR **draft**, sin refrescar el lock, fusionar ni instalar. `status:approved
 autoriza únicamente la preparación del PR bajo este setup, no aprueba los cambios originales.
 Los checks fallan intencionalmente mientras los archivos no coincidan con el lock revisado.
 Si GitHub impide crear PRs mediante su token, el job falla explícitamente; no se instala un PAT.
+Los eventos de PR creados con GITHUB_TOKEN no disparan otros workflows automáticamente.
+Ejecutar los checks manualmente en la rama candidata o revisar y publicar un nuevo commit
+humano antes de marcarla lista. Un reintento conserva una rama ya publicada y las ediciones humanas.
 
 Después de revisar los cambios originales y adaptar recetas/principios:
 

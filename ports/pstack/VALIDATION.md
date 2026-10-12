@@ -6,9 +6,9 @@ Keep implementation, deterministic tests, host discovery and model behavior sepa
 |---|---|
 | Source pin | Upstream 0.15.20; commit recorded in upstream.lock |
 | Adaptation | 28 functional workflow ports, 24 principles (2 policy overrides), 23 playbooks |
-| Deterministic tests | 15 local tests passed on macOS; CI tracked separately |
+| Deterministic tests | 21 local tests passed on macOS; CI tracked separately |
 | Codex discovery | Native Codex CLI 0.144.1 skills/list returned all 52 names, no pstack loader errors |
-| Antigravity discovery | Pending native catalog/UI probe |
+| Antigravity discovery | App 2.22.0 Installed search pstack reports Skills & Rules 52, Global config/skills |
 | Agent behavioral evals | Not run; no extra agent sessions authorized |
 | Parallel/multi-model workflows | Conditional; no native personas registered |
 | Grok Bot UI | Conditional on authorized available backend |

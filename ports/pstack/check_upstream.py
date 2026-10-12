@@ -62,15 +62,19 @@ def main():
     labels = json.loads(run("gh", "issue", "view", str(issue), "--repo", OWNER, "--json", "labels"))["labels"]
     if "status:approved" not in {x["name"] for x in labels}:
         raise ValueError("Linked issue must authorize PR preparation")
-    run("git", "fetch", "--no-tags", f"https://github.com/{UPSTREAM}.git", commit)
-    run("git", "checkout", "-B", branch, "origin/main")
-    run("git", "restore", "--source", commit, "--staged", "--worktree", "--", "pstack")
-    if not run("git", "diff", "--cached", "--name-only"):
-        print(json.dumps({**result, "same_pstack_tree": True})); return
-    run("git", "-c", "user.name=github-actions[bot]", "-c",
-        "user.email=41898282+github-actions[bot]@users.noreply.github.com", "commit",
-        "-m", f"chore(pstack): stage upstream {version} for review")
-    run("git", "push", "origin", f"HEAD:refs/heads/{branch}")
+    # A failed PR API call may have left its branch pushed. Reuse it without a
+    # rewrite on retry; preserve any human edits made on that candidate branch.
+    existing_branch = run("git", "ls-remote", "--heads", "origin", f"refs/heads/{branch}")
+    if not existing_branch:
+        run("git", "fetch", "--no-tags", f"https://github.com/{UPSTREAM}.git", commit)
+        run("git", "checkout", "-B", branch, "origin/main")
+        run("git", "restore", "--source", commit, "--staged", "--worktree", "--", "pstack")
+        if not run("git", "diff", "--cached", "--name-only"):
+            print(json.dumps({**result, "same_pstack_tree": True})); return
+        run("git", "-c", "user.name=github-actions[bot]", "-c",
+            "user.email=41898282+github-actions[bot]@users.noreply.github.com", "commit",
+            "-m", f"chore(pstack): stage upstream {version} for review")
+        run("git", "push", "origin", f"HEAD:refs/heads/{branch}")
     url = run("gh", "pr", "create", "--repo", OWNER, "--head", branch, "--base", "main",
               "--draft", "--label", "type:chore", "--title", f"chore(pstack): review upstream {version}",
               "--body", f"Closes #{issue}\n\n## Why\nNew upstream pstack changes are available.\n\n"
