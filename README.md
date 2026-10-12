@@ -1,4 +1,12 @@
-# Cursor plugins
+# pstack personal fork
+
+This fork preserves Cursor's original plugins and maintains a **Codex + Antigravity**
+functional adaptation at [ports/pstack](ports/pstack/README.md). Install only that port,
+not the full marketplace. See [validation evidence and limits](ports/pstack/VALIDATION.md).
+
+---
+
+# Cursor plugins (original repository)
 
 Official Cursor plugins for popular developer tools, frameworks, and SaaS products. Each plugin is a standalone directory at the repository root with its own `.cursor-plugin/plugin.json` manifest.
 

@@ -1,0 +1,145 @@
+{
+  "poteto-mode": [
+    "Use only for the current explicitly requested task. Read references/playbooks.json and choose the narrowest playbook from the goal, scope and acceptance check. Preserve a read-only request as read-only.",
+    "Start with a compact checklist of the chosen steps. Mark skipped steps with a reason. For a bug, reproduce before proposing a fix; for performance, record a baseline; for a feature, define the data shape and observable behavior first.",
+    "Ground relevant code with pstack-how; use pstack-why only when historical rationale matters. Apply relevant principles from references/principles.md without reading unrelated material.",
+    "Implement the smallest evidence-supported change. Route to sibling pstack skills only when needed. Do not open a PR as an automatic final step: publication requires user authorization.",
+    "Before reporting completion, run the actual behavior checks, inspect the diff and evaluate blast radius. Give confirmed results, validation limits and the next necessary action. Parallel review is optional and requires explicit permission."
+  ],
+  "poteto-help": [
+    "Answer the pstack question without starting the work. Explain the skill or playbook appropriate to the user's specific need and give one usable prompt.",
+    "For this port, refer to references/catalog.json. Explain explicit invocation, sequential default, review-gated updates, and the distinction between installation and behavioral validation.",
+    "Do not promise native model switching, persistent custom modes or independent panels without live capability evidence. If a material detail is missing, ask one question and stop."
+  ],
+  "setup-pstack": [
+    "Inspect the current host and the installed sibling skills. Read references/host.md. Report skill presence separately from loader discovery and behavioral testing.",
+    "Default to the existing session model and sequential execution. Check native tool availability without accessing credential values. Do not register agents, add connectors or weaken permissions.",
+    "If explicitly asked to install/update, use the port's deterministic installer from the maintained repository. Preview the destination and conflicts first. Never run Cursor setup scripts or guess paths from a different surface.",
+    "Model-role configuration is optional, not required for this port. If requested, verify the current catalog and user-selected roles before a configuration write. End with exact installed version, host, validation status and rollback command."
+  ],
+  "how": [
+    "Read the relevant entrypoints and trace a concrete operation from caller through data access to its observable result. Identify ownership, layering, state transitions and error paths.",
+    "Anchor statements to exact code locations. Separate behavior proved by source from behavior observed at runtime. Show one compact diagram when it clarifies the flow.",
+    "For placement questions, show why the responsibility belongs to that boundary rather than naming a file without explanation. Do not edit code during an explanation request."
+  ],
+  "why": [
+    "Pin the decision or regression to investigate. Inspect relevant git history, PRs/issues and connected documentation in the requested project.",
+    "Discover available evidence sources at runtime. Search each source sequentially unless delegation was explicitly requested. Missing sources and null findings are findings, not invented explanations.",
+    "Distinguish documented intent, inference and unknowns. Cite the evidence for each conclusion and identify meaningful tradeoffs. Never manufacture a historical motive from current code."
+  ],
+  "teach": [
+    "Run pstack-how for current mechanics and pstack-why when motivation matters. Use the user's technical level rather than dumping implementation details.",
+    "Build the explanation from one concrete example, then the mental model, then relevant tradeoffs. Add diagrams one at a time only when useful.",
+    "Check every factual claim against source or observed behavior. End with the minimum explanation that lets the user reason about the system independently."
+  ],
+  "recall": [
+    "Pin the project, topic and time window; default recent to seven days. Prefer scoped native history and Engram. Never mine another workspace's conversations without explicit permission.",
+    "Find matching prior decisions, open threads and artifacts. Where a feature is named, also check relevant shared records through pstack-why. Treat stale memories as unverified until checked.",
+    "Verify referenced branches, PRs and incidents against live state. Return at most five capsule bullets, a status per thread, recurring problems and one concrete next move. Do not act on recalled work unless requested."
+  ],
+  "ketchup": [
+    "Summarize actions in this chat since the user's last message. State what changed, what evidence exists and which decisions need the user's attention.",
+    "Give each action item enough context to decide without rereading tool output. Distinguish completed, attempted, blocked and proposed. Do not invent actions or start new work."
+  ],
+  "blast-radius": [
+    "Inspect the actual diff and trace callers, persisted data, API contracts, configuration, migrations and concurrency paths outside it.",
+    "Name the specific invariant on which safety depends. Prove it with an actual behavior check if accessible; otherwise mark it unproven and explain the validation gap.",
+    "Report reachable risks with evidence and severity, not speculative exhaustive lists. Do not mutate production or expand a read-only review into fixes."
+  ],
+  "architect": [
+    "Ground the existing subsystem with pstack-how and historical constraints with pstack-why when relevant. Write the caller's desired usage first, then derive types, signatures and module boundaries.",
+    "For a real design fork, sketch at least two structurally distinct options and compare interface depth, invariants, maintenance and complexity. In sequential mode these are your alternatives, not independent model proposals.",
+    "Prefer a shape where a change that looks right locally is valid globally. Encode illegal states in types and isolate shared mutable state before adding locks.",
+    "Respect a requested design-only scope or checkpoint. Implement only when the human's request authorizes it. If recurring implementation friction contradicts the design, re-ground and revise rather than layering escape hatches."
+  ],
+  "arena": [
+    "Define one common brief and acceptance checks for competing candidates. Independent parallel candidates require explicit human permission and an available native delegation tool.",
+    "If authorized, give each candidate the same brief, separate artifacts/workspaces and no access to competitors' conclusions. Compare real outputs against the same checks.",
+    "Otherwise create sequential alternative sketches and explicitly call them sequential alternatives, not an arena panel. Choose a base, graft only demonstrated improvements and verify the integrated result."
+  ],
+  "swarm": [
+    "Divide the requested task into bounded slices with clear inputs, write ownership and output schema. Check authorization before any subagent spawn.",
+    "Use isolated workspaces for overlapping writes and avoid conflicting ownership. Give each authorized worker a self-contained brief, acceptance checks and permission limits.",
+    "When delegation is absent or unrequested, execute slices sequentially and disclose that. Consolidate evidence, discrepancies, failures and remaining gaps; worker self-report alone is not proof."
+  ],
+  "interrogate": [
+    "Review the actual diff and its callers against intent, correctness, security, types, concurrency, performance, tests and unnecessary complexity. Ground every finding in a reachable execution path.",
+    "Independent review requires explicitly authorized native reviewers. Keep their first passes blind and reconcile disagreements from evidence. Without that, apply lenses sequentially and label the result sequential self-review.",
+    "Return only actionable findings with severity, exact location, mechanism and a practical correction. Respect review-only scope. If fixes are authorized, rerun the relevant behavior checks after fixing confirmed findings."
+  ],
+  "automate-me": [
+    "Extract preferences from the user's explicit instructions and scoped history, not guesses or a single accidental outcome. Separate universal constraints from project-specific ones.",
+    "Draft a personal mode with concise routing, boundaries and real acceptance checks. Reuse existing pstack skills instead of duplicating their full instructions.",
+    "Only create/update the personal skill when authorized. This skill does not create a recurring automation. Validate metadata and realistic triggers; do not silently edit unrelated skills or global configuration."
+  ],
+  "reflect": [
+    "Review the in-scope session for successful techniques, repeated mistakes and verification gaps. Work sequentially unless reviewers were explicitly requested.",
+    "Propose a concrete improvement to the existing mechanism: architecture, types, lint, tests or a targeted skill edit. Avoid accumulating instructions that repeat existing rules.",
+    "Apply changes only within the authorized scope, verify them and distinguish a proposed lesson from an implemented enforcement. Save useful discoveries through Engram when available."
+  ],
+  "correct": [
+    "Identify repeated, evidenced mistake classes from this project's corrections and history. Do not expand transcript collection beyond the project.",
+    "For each class, prefer architecture, then types, then lint/CI, then behavior tests; documentation is the last fallback. Show what makes the mistake impossible or detectable.",
+    "Prove a new check fails on a real bad case and passes on the corrected case. Track rule, enforcement, evidence and residual limitations. Do not alter unrelated configuration without authorization."
+  ],
+  "tdd": [
+    "Use when explicitly requested or a bug has an obvious cheap local regression target. Otherwise explain why an integration/runtime check is more useful.",
+    "Write a test through the public behavior boundary with a literal expected outcome. Run it and confirm the intended failure, not an import/setup failure.",
+    "Implement the smallest fix, run the test to green, then nearby regression checks. Refactor only while keeping behavior green. Report red/green commands and observed outcomes."
+  ],
+  "benchmark-checklist": [
+    "Identify what limits the workload, whether the work actually happened and whether caching, warmup, configuration, errors or instrumentation changed the measurement.",
+    "Compare equivalent before/after runs, repeat enough to expose variation, report units and conditions, and distinguish local microbenchmark gains from end-to-end gains.",
+    "Do not act on an unexplained number. State variance and limitations; reject measurements that skipped work or changed semantics."
+  ],
+  "no-comments": [
+    "Review comments in the changed scope; do not indiscriminately delete all comments. Remove narration, stale descriptions and comments that excuse bad structure.",
+    "Keep legal notices, public documentation and genuinely non-obvious external constraints. Prefer encoding invariants in names, types, checks or tests where that is clearer.",
+    "Use an independent comment reviewer only when explicitly authorized. Otherwise label the pass sequential. If edits are authorized, verify that behavior is unchanged and report retained constraints."
+  ],
+  "typescript-best-practices": [
+    "Model meaningful variants with discriminated unions and exhaustive handling. Parse unknown external data at boundaries; do not lie to the compiler with casts or non-null assertions.",
+    "Brand semantic primitives when mixing them is a real risk, derive types from authoritative schemas, keep readonly data immutable and narrow optional state to its true owner.",
+    "Prefer the existing project's TypeScript version and conventions. Check compiler and behavior tests; compilation alone does not establish correctness. Do not add libraries or abstractions without a demonstrated need."
+  ],
+  "figure-it-out": [
+    "When no narrower playbook fits, define the target outcome, measurable acceptance criteria, scope and risk boundaries. Break the work into independently verifiable units.",
+    "Use a hypothesis loop: observation, proposed mechanism, discriminating experiment, result and accept/reject decision. Revert unsupported changes rather than layering more guards.",
+    "Record significant decisions through pstack-show-me-your-work. Stay bounded; stop for missing authorization, unavailable evidence or the agreed attempt limit. Do not create unattended automation implicitly."
+  ],
+  "show-me-your-work": [
+    "Keep a local TSV decision log only when requested or necessary for reviewable long work. Record timestamp, phase, decision, why, evidence and result.",
+    "Use scripts/log.py with named arguments and an explicitly scoped output file. Cells are sanitized against tabs/newlines and spreadsheet formulas. Exclude secrets and private transcripts.",
+    "Commit or publish the log only when authorized. A decision trail supports review; it does not replace runtime evidence."
+  ],
+  "create-verification-skill": [
+    "Inspect the app's actual UI/CLI/service entrypoints and test facilities. Map user-visible features to reproducible commands or interactions and named assertions.",
+    "Create a project-local verify skill only within the authorized scope. Include prerequisites, safe fixtures, cleanup, evidence outputs, environment boundaries and explicit failure conditions.",
+    "Use available native browser/device/terminal tools rather than Cursor control skills. Verify a happy path and a meaningful failure path. Never require production mutations to prove a development feature."
+  ],
+  "maintain-verification-skill": [
+    "Compare the existing verification feature map against actual source and user-visible behavior. Read features sequentially unless parallel investigators were requested.",
+    "Run a scoped live pass where accessible. Distinguish stale map entries, missing features, inaccessible behavior and actual defects.",
+    "Apply only proven corrections, rerun the changed verification paths and preserve the environment's permissions. Publish at most one bounded PR only if publication was explicitly requested."
+  ],
+  "unslop": [
+    "Edit the requested text for direct, natural language. Cut inflated importance, promotional filler, generic transitions, vague attribution and unnecessary jargon.",
+    "Preserve meaning, factual uncertainty, technical identifiers and the user's voice. Do not fabricate evidence or make a cautious claim sound proved.",
+    "Return the revised text without a long explanation unless the user asks for one."
+  ],
+  "bro": [
+    "Restate the last message in plain human language and the user's language. Explain only the jargon necessary to understand the result.",
+    "Preserve technical meaning, caveats and decisions. Do not add new claims, research or work."
+  ],
+  "technical-writing": [
+    "Choose the document's purpose using Diataxis: tutorial, how-to, reference or explanation. Do not mix them accidentally.",
+    "Apply Google developer style, simple instruction verbs, consistent terminology and globally understandable sentences. Put the reader's next action and essential context before deep detail.",
+    "For PRs explain why, what, scope, meaningful tradeoffs, blast radius and actual verification. For commits use Conventional Commits without AI attribution. Keep claims evidence-backed and avoid decorative prose."
+  ],
+  "make-bot-ui": [
+    "This is a conditional integration, not a universally available bot runtime. Before building, verify the user's intended bot backend, webhook contract and available hosting/network tools.",
+    "Do not call Cursor-only automation APIs or substitute a provider silently. If no supported backend is available, stop that integration and explain the concrete requirement.",
+    "When authorized and available, build the smallest UI with server-side credentials, authenticated webhook handling and replay protection. Use a human-only secret handoff, never expose sender keys in frontend bundles.",
+    "Verify the real click-to-webhook-to-bot result in the authorized environment. Tailscale exposure, deployment and external messaging each need applicable authorization."
+  ]
+}
