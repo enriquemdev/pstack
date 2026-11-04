@@ -1,0 +1,13 @@
+{
+  "name": "pstack-claude-ports",
+  "owner": {
+    "name": "enriquemdev"
+  },
+  "plugins": [
+    {
+      "name": "cursor-team-kit",
+      "source": "./cursor-team-kit",
+      "description": "Claude Code subset of Cursor Team Kit: the deslop, control-cli and control-ui skills that pstack references, copied unchanged."
+    }
+  ]
+}
